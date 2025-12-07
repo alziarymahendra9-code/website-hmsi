@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Himpunan Mahasiswa Kabupaten Tangerang</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
+    header { transition: background-color 0.3s ease, box-shadow 0.3s ease; }
+    header.scrolled { background-color: #0f172a; box-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+    .hero-bg {
+      background-image: url('FOTO KEGIATAN.JPEG');
+      background-size: cover;
+      background-position: center; 
+    }
+
+    /* Animasi muncul saat discroll */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Galeri */
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+    .gallery-item img {
+      transition: transform 0.5s ease;
+    }
+    .gallery-item:hover img {
+      transform: scale(1.1);
+      filter: brightness(80%);
+    }
+    .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.6);
+      color: white;
+      opacity: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: opacity 0.4s ease;
+    }
+    .gallery-item:hover .gallery-overlay {
+      opacity: 1;
+    }
+
+    /* Kartu Program */
+    .program-card {
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+    .program-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
+  </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Navbar -->
+  <header class="fixed w-full top-0 z-50">
+    <nav class="flex justify-between items-center px-6 py-4">
+      <div class="text-2xl font-bold text-BLUE-500">IMKT</div>
+      <ul class="hidden md:flex space-x-6 text-white font-medium">
+        <li><a href="#home" class="hover:text-BLUE-400">Beranda</a></li>
+        <li><a href="#about" class="hover:text-BLUE-400">Tentang</a></li>
+        <li><a href="#team" class="hover:text-BLUE-400">Pengurus</a></li>
+        <li><a href="#program" class="hover:text-BLUE-400">Program</a></li>
+        <li><a href="#gallery" class="hover:text-BLUE-400">Galeri</a></li>
+        <li><a href="#contact" class="hover:text-BLUE-400">Kontak</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="hero-bg h-screen flex flex-col justify-center items-center text-center text-white relative">
+    <div class="bg-black bg-opacity-60 absolute inset-0"></div>
+    <div class="relative z-10 px-6">
+      <h1 class="text-4xl md:text-6xl font-bold mb-4">Bersinergi, Berinovasi, dan Berkarya</h1>
+      <p class="text-lg md:text-2xl mb-6">Bersama Himpunan Mahasiswa IMKT</p>
+      <a href="#gallery" class="bg-orange-500 hover:bg-orange-600 px-6 py-3 rounded-full font-semibold">Lihat Kegiatan Kami</a>
+    </div>
+  </section>
+
+  <!-- Tentang Kami -->
+  <section id="about" class="py-20 bg-white reveal">
+    <div class="container mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <h2 class="text-3xl font-bold mb-4 text-blue-900">Tentang IMKT</h2>
+        <p class="text-gray-700 mb-4">
+          Himpunan Mahasiswa IMKT (HIMPUNAN MAHASISWA KABUPATEN TANGERANG) adalah wadah pengembangan diri bagi mahasiswa untuk berinovasi, berorganisasi, dan berkontribusi dalam bidang manajemen serta kewirausahaan berbasis teknologi.
+        </p>
+        <p class="text-gray-700">Visi kami adalah membentuk mahasiswa yang berjiwa pemimpin, kreatif, dan adaptif terhadap perkembangan teknologi dalam dunia bisnis.</p>
+      </div>
+      <img src="FOTO KEGIATAN.jpeg" alt="Tentang Kami" class="rounded-2xl shadow-lg">
+    </div>
+  </section>
+
+  <!-- Pengurus -->
+  <section id="team" class="py-20 bg-gray-100 text-center reveal">
+    <h2 class="text-3xl font-bold text-blue-900 mb-10">Struktur Pengurus</h2>
+    <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-10 px-6">
+      <div>
+        <img src="https://via.placeholder.com/200" class="mx-auto rounded-full mb-4" />
+        <h3 class="font-semibold">Ketua</h3>
+        <p class="text-sm text-gray-600">Nama Ketua</p>
+      </div>
+      <div>
+        <img src="https://via.placeholder.com/200" class="mx-auto rounded-full mb-4" />
+        <h3 class="font-semibold">Wakil Ketua</h3>
+        <p class="text-sm text-gray-600">Nama Wakil</p>
+      </div>
+      <div>
+        <img src="https://via.placeholder.com/200" class="mx-auto rounded-full mb-4" />
+        <h3 class="font-semibold">Sekretaris</h3>
+        <p class="text-sm text-gray-600">Nama Sekretaris</p>
+      </div>
+      <div>
+        <img src="https://via.placeholder.com/200" class="mx-auto rounded-full mb-4" />
+        <h3 class="font-semibold">Bendahara</h3>
+        <p class="text-sm text-gray-600">Nama Bendahara</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Program -->
+  <section id="program" class="py-20 bg-white text-center reveal">
+    <h2 class="text-3xl font-bold text-blue-900 mb-10">Program & Kegiatan</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 px-6">
+      <div class="program-card p-6 bg-gray-50 rounded-xl shadow transition">
+        <h3 class="font-semibold text-lg mb-2 text-orange-500">Seminar Kewirausahaan</h3>
+        <p class="text-gray-600 text-sm">Pelatihan dan inspirasi dari para entrepreneur muda sukses.</p>
+      </div>
+      <div class="program-card p-6 bg-gray-50 rounded-xl shadow transition">
+        <h3 class="font-semibold text-lg mb-2 text-orange-500">Pelatihan Startup</h3>
+        <p class="text-gray-600 text-sm">Membentuk tim startup mahasiswa dengan pendampingan ahli.</p>
+      </div>
+      <div class="program-card p-6 bg-gray-50 rounded-xl shadow transition">
+        <h3 class="font-semibold text-lg mb-2 text-orange-500">Business Expo</h3>
+        <p class="text-gray-600 text-sm">Pameran ide bisnis kreatif dari mahasiswa IMKT.</p>
+      </div>
+      <div class="program-card p-6 bg-gray-50 rounded-xl shadow transition">
+        <h3 class="font-semibold text-lg mb-2 text-orange-500">Social Project</h3>
+        <p class="text-gray-600 text-sm">Kegiatan sosial dan pengabdian kepada masyarakat.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galeri -->
+  <section id="gallery" class="py-20 bg-gray-100 text-center reveal">
+    <h2 class="text-3xl font-bold text-blue-900 mb-10">Galeri Kegiatan</h2>
+    <div class="grid md:grid-cols-3 gap-6 px-6">
+      <div class="gallery-item">
+        <img src="https://source.unsplash.com/random/400x300?university" alt="Galeri">
+        <div class="gallery-overlay">Kegiatan 1</div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://source.unsplash.com/random/401x300?students" alt="Galeri">
+        <div class="gallery-overlay">Kegiatan 2</div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://source.unsplash.com/random/402x300?campus" alt="Galeri">
+        <div class="gallery-overlay">Kegiatan 3</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kontak -->
+  <section id="contact" class="py-20 bg-white reveal">
+    <div class="max-w-lg mx-auto text-center">
+      <h2 class="text-3xl font-bold text-blue-900 mb-6">Hubungi Kami</h2>
+      <form action="mailto:alziarymahendra9@gmail.com" method="POST" enctype="text/plain" class="space-y-4">
+        <input type="text" name="nama" placeholder="Nama Anda" class="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500">
+        <input type="email" name="email" placeholder="Email Anda" class="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500">
+        <textarea name="pesan" rows="4" placeholder="Pesan Anda" class="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500"></textarea>
+        <button type="submit" class="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-2 rounded-full">Kirim Pesan</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-blue-950 text-white text-center py-6">
+    <div class="font-semibold mb-2">IMKT</div>
+    <p class="text-sm mb-2">© 2025 Himpunan Mahasiswa IMKT. All rights reserved.</p>
+    <div class="space-x-4 text-orange-400">
+      <a href="#">Instagram</a>
+      <a href="#">LinkedIn</a>
+      <a href="mailto:hima.imkt@email.com">Email</a>
+    </div>
+  </footer>
+
+  <script>
+    // Navbar scroll effect
+    window.addEventListener('scroll', function() {
+      const header = document.querySelector('header');
+      if (window.scrollY > 50) header.classList.add('scrolled');
+      else header.classList.remove('scrolled');
+    });
+
+    // Scroll reveal animation
+    const reveals = document.querySelectorAll('.reveal');
+    window.addEventListener('scroll', revealElements);
+
+    function revealElements() {
+      for (let i = 0; i < reveals.length; i++) {
+        const windowHeight = window.innerHeight;
+        const revealTop = reveals[i].getBoundingClientRect().top;
+        const revealPoint = 150;
+
+        if (revealTop < windowHeight - revealPoint) {
+          reveals[i].classList.add('active');
+        } else {
+          reveals[i].classList.remove('active');
+        }
+      }
+    }
+
+    // Trigger initial check
+    revealElements();
+  </script>
+</body>
+</html>

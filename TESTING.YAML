@@ -1,0 +1,6 @@
+- name: Build the site in the alziary/builder container
+  run: |
+    docker run \
+      -v ${{ github.workspace }}:/srv/alziary \
+      -v ${{ github.workspace }}/_site:/srv/alziary/_site \
+      jekyll/builder:latest /bin/bash -c "chmod -R 777 /srv/alziary && cd /srv/alziary && jekyll build --future --destination /srv/alziary/_site"
